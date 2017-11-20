@@ -9,7 +9,7 @@
         <property name="dist" location="dist" />
         <property name="build" location="build" />
    <path id="base.path">
-     <fileset dir="web/WEB-INF/lib">
+     <fileset dir="/WEB-INF/lib">
                <include name="*.jar" />
                 </fileset>
                 <fileset dir="${user.home}/.ShellTest/lib">
