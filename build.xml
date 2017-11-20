@@ -4,7 +4,7 @@
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
               as the first entry and export the buildfile again. -->
-<project basedir="." default="build" name="ShellTest">
+<project basedir="." default="dist" name="ShellTest">
      <property name="src" location="src" />
         <property name="dist" location="dist" />
         <property name="build" location="build" />
