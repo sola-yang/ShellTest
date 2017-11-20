@@ -19,9 +19,6 @@
     </path>
       <target name="init">
                 <tstamp />
-                <copy todir="${build}">
-                        <fileset dir="web"/>
-                </copy>
                 <mkdir dir="${build}/WEB-INF/classes" />
                 <mkdir dir="${dist}" />
         </target>
