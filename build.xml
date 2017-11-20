@@ -7,7 +7,7 @@
 <project basedir="." default="dist" name="ShellTest">
      <property name="src" location="src" />
         <property name="dist" location="dist" />
-        <property name="build" location="build" />
+        
    <path id="base.path">
      <fileset dir="/WEB-INF/lib">
                <include name="*.jar" />
@@ -25,7 +25,7 @@
 
       <target name="compile" depends="init">
                 <javac source="1.7" target="1.7" encoding="GBK" srcdir="${src}"
-destdir="${build}/WEB-INF/classes" debug="true" debuglevel="lines,vars,source" includejavaruntime="true">
+destdir="/WEB-INF/classes" debug="true" debuglevel="lines,vars,source" includejavaruntime="true">
                         <classpath refid="base.path"/>
                 </javac>
        </target>
@@ -49,11 +49,11 @@ destdir="${build}/WEB-INF/classes" debug="true" debuglevel="lines,vars,source" i
                 <include name="**/*.xlsx"/>
                         </fileset>
                 </copy>
-                <war webxml="/WEB-INF/web.xml" destfile="${dist}/ROOT.war" basedir="${build}"/>
+                <war webxml="/WEB-INF/web.xml" destfile="${dist}/ROOT.war" basedir="."/>
         </target>
 
         <target name="clean" description="clean up">
-                <delete dir="${build}" />
+              
                 <delete dir="${dist}" />
         </target>
 </project>
