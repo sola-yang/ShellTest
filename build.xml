@@ -1,34 +1,23 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- WARNING: Eclipse auto-generated file.
-              Any modifications will be overwritten.
-              To include a user specific buildfile here, simply create one in the same
-              directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. -->
-<project basedir="." default="dist" name="ShellTest">
-     <property name="src" location="src" />
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ShellTest" default="dist" basedir=".">
+        <property name="src" location="/usr/local/shell/ShellTest/src" />
         <property name="dist" location="dist" />
-        <property name="build" location="/usr/local/tomcat/tomcat8/webapps/ShellTest/" />
-   <path id="base.path">
-     <fileset dir="/WEB-INF/lib">
-               <include name="*.jar" />
-                </fileset>
-                <fileset dir="${user.home}/.ShellTest/lib">
-                        <include name="*.jar" />
-                </fileset>
-                <pathelement location="${build}/WEB-INF/classes" />
-    </path>
-      <target name="init">
+        <property name="build" location="build" />
+        <target name="init">
                 <tstamp />
+                <copy todir="${build}">
+                        <fileset dir="/usr/local/shell/ShellTest/src/main/webapp"/>
+                </copy>
                 <mkdir dir="${build}/WEB-INF/classes" />
                 <mkdir dir="${dist}" />
         </target>
 
-      <target name="compile" depends="init">
+        <target name="compile" depends="init">
                 <javac source="1.7" target="1.7" encoding="GBK" srcdir="${src}"
 destdir="${build}/WEB-INF/classes" debug="true" debuglevel="lines,vars,source" includejavaruntime="true">
-                        <classpath refid="base.path"/>
+                        
                 </javac>
-       </target>
+        </target>
 
         <target name="dist" depends="war">
         </target>
@@ -43,10 +32,10 @@ destdir="${build}/WEB-INF/classes" debug="true" debuglevel="lines,vars,source" i
                         </fileset>
                 </copy>
                 <copy todir="${build}/WEB-INF/classes" overwrite="true">
-                        <fileset dir="${user.home}/.ShellTest">
+                         <fileset dir="/usr/local/shell/ShellTest/src/main">
                                 <include name="*.properties"/>
                                 <include name="*.xml"/>
-                <include name="**/*.xlsx"/>
+                              <include name="**/*.xlsx"/>
                         </fileset>
                 </copy>
                 <war webxml="${build}/WEB-INF/web.xml" destfile="${dist}/ROOT.war" basedir="${build}"/>
