@@ -1,5 +1,5 @@
 #!/bin/bash
-APP_HOME=/usr/local/shell
+APP_HOME=/usr/local/shell/ShellTest
 BASE_DIR=/usr/local/base
 TOMCAT_BASE=/usr/local/tomcat/tomcat8
 function prepare(){
