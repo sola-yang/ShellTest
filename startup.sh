@@ -1,5 +1,5 @@
 #!/bin/bash
-APP_HOME=/usr/local/shell/ShellTest
+APP_HOME=/usr/local/shell
 BASE_DIR=/usr/local/base
 TOMCAT_BASE=/usr/local/tomcat/tomcat8
 function prepare(){
@@ -15,7 +15,7 @@ function check_fail(){
 
 }
 function build(){
-   cd $APP_HOME
+   cd $APP_HOME/ShellTest
    echo "check out and build app files."
    git checkout .
    git pull 
