@@ -18,9 +18,9 @@ function build(){
    cd $APP_HOME
    echo "check out and build app files."
    git pull
-   ant clean -buildfile /usr/local/shell/build.xml
+   ant clean 
    check_fail "ant clean: failed to clean ant build"
-   ant -buildfile /usr/local/shell/build.xml
+   ant
    check_fail "ant build: failed to ant build"
 
 }
@@ -95,17 +95,6 @@ function stop_tomcat(){
 function start_tomcat(){
 
         echo "start tomcat..."
-
-        export CATALINA_OPTS='-Xss256K -DappName=rootstat -server -XX:+DisableExplicitGC -XX:+PrintFlagsFinal -XX:+UseConcMarkSweepGC -Xmx1g -Xms1g -XX:NewSize=300m -XX:PermSize=96m -XX:MaxPermSize
-
-=96m -Xloggc:/data/rootstat/work/logs/tomcat/gc.log -XX:+PrintGCDetails -XX:+PrintGCTimeStamps  -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=$BASE_DIR/dump/heap.dump' 
-
-
-
-        export CATALINA_BASE=$TOMCAT_BASE
-
-        export CATALINA_HOME=$TOMCAT_BASE
-
          $TOMCAT_BASE/bin/startup.sh
 
         check_fail "start tomcat: failed to start tomcat"
