@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="ShellTest" default="dist" basedir=".">
         <property name="src" location="/usr/local/shell/ShellTest/src" />
-        <property name="dist" location="/usr/local/shell/dist" />
+        <property name="dist" location="/usr/local/shell/ShellTest/dist" />
         <property name="build" location="/usr/local/shell/build" />
         <target name="init">
                 <tstamp />
