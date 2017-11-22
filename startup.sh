@@ -17,8 +17,8 @@ function check_fail(){
 function build(){
    cd $APP_HOME
    echo "check out and build app files."
-    ShellTest/.git git checkout .
-    ShellTest/.git git pull 
+    ShellTest/.git/ git checkout .
+    ShellTest/.git/ git pull 
    ant clean 
    check_fail "ant clean: failed to clean ant build"
    ant
