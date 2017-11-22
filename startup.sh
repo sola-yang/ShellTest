@@ -17,7 +17,6 @@ function check_fail(){
 function build(){
    cd $APP_HOME/ShellTest
    echo "check out and build app files."
-   git checkout .
    git pull 
    ant clean 
    check_fail "ant clean: failed to clean ant build"
